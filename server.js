@@ -4,6 +4,9 @@ import morgan from "morgan";
 import { connetToDB } from "./src/config/connect.db.js";
 import categoryRouter from './src/routes/category.routes.js'
 import bookRouter from './src/routes/book.routes.js';
+import { config } from 'dotenv'
+
+config()
 
 const PORT = process.env.PORT || 5000;
 
