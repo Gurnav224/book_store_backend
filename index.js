@@ -4,6 +4,9 @@ import morgan from "morgan";
 import { connetToDB } from "./src/config/connect.db.js";
 import categoryRouter from './src/routes/category.routes.js'
 import bookRouter from './src/routes/book.routes.js';
+import userRouter from './src/routes/user.routes.js';
+
+
 import { config } from 'dotenv'
 
 config()
@@ -23,6 +26,7 @@ app.get('/', (req, res) => {
     res.send('<h1>Welcome to the  Book store server</h1>')
 })
 
+app.use('/auth', userRouter)
 app.use('/categories',categoryRouter);
 app.use('/books', bookRouter)
 
